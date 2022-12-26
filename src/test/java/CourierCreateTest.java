@@ -29,7 +29,7 @@ public class CourierCreateTest {
     {
         Courier courier = courierGenerator.random();
 
-        courierClient.create(courier)
+        courierClient.createCourier(courier)
         .assertThat().statusCode(SC_CREATED)
                 .body("ok", is(true));
 
@@ -42,9 +42,8 @@ public class CourierCreateTest {
     @Test
     public void existsSameCourierCreating()
     {
-        String json = "{\"login\": \"1\", \"password\": \"1234\", \"firstName\": \"saske\"}";
-
-        courierClient.create(json)
+        Courier courier = new Courier("1","1234","saske");
+        courierClient.createCourier(courier)
                 .assertThat().statusCode(SC_CONFLICT)
                 .and().body("message", equalTo("Этот логин уже используется"));
     }
@@ -55,7 +54,7 @@ public class CourierCreateTest {
         Courier courier = courierGenerator.random();
 
         courier.setLogin(null);
-        courierClient.create(courier)
+        courierClient.createCourier(courier)
                 .assertThat().statusCode(SC_BAD_REQUEST)
                 .and().body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
@@ -63,12 +62,11 @@ public class CourierCreateTest {
     @Test
     public void someFieldDoesntExistsReturnsError()
     {
-        String json = "{\"firstName\": \"saske\"}";
+        Courier courier = new Courier("1",null,null);
 
-        courierClient.create(json)
+        courierClient.createCourier(courier)
                 .assertThat().statusCode(SC_BAD_REQUEST)
                 .and().body("message", equalTo("Недостаточно данных для создания учетной записи"));
-
     }
 
 }

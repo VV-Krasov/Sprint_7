@@ -27,7 +27,8 @@ public class OrdersCreateTest {
                 {new String[]{"BLACK", "GRAY"}},
                 {new String[]{"BLACK"}},
                 {new String[]{"GRAY"}},
-                {new String[]{"GRAY", "BLACK"}}
+                {new String[]{"GRAY", "BLACK"}},
+                {new String[]{}}
         };
     }
 
@@ -38,13 +39,5 @@ public class OrdersCreateTest {
         ordersClient.create(order)
                 .assertThat().statusCode(SC_CREATED).and()
                 .assertThat().body("track", greaterThan(0));
-    }
-
-    @Test
-    public void colorIsOptionalForSuccessOrderCreate()
-    {
-        Order order = ordersGenerator.randomOrderWithSpecificColor(new String[]{});
-        ordersClient.create(order)
-                .assertThat().statusCode(SC_CREATED);
     }
 }

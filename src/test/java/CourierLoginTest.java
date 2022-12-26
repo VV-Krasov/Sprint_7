@@ -30,7 +30,7 @@ public class CourierLoginTest {
     @Test
     public void loginWithCorrectData() {
         Courier courier = courierGenerator.random();
-        courierClient.create(courier);
+        courierClient.createCourier(courier);
 
         CourierCredentials courierCredentials = CourierCredentials.from(courier);
         courierIds.add(new CourierId(
@@ -54,7 +54,7 @@ public class CourierLoginTest {
     public void loginWithWrongPassword()
     {
         Courier courier = courierGenerator.random();
-        courierClient.create(courier);
+        courierClient.createCourier(courier);
 
         CourierCredentials courierCredentials = CourierCredentials.from(courier);
         courierIds.add(new CourierId(

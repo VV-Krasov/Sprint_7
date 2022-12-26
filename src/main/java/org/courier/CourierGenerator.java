@@ -1,4 +1,4 @@
-package org.example;
+package org.courier;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

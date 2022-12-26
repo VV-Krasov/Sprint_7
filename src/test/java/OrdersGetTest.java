@@ -1,4 +1,4 @@
-import org.example.OrdersClient;
+import org.order.OrdersClient;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.notNullValue;

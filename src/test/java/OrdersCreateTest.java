@@ -1,6 +1,6 @@
-import org.example.Order;
-import org.example.OrdersClient;
-import org.example.OrdersGenerator;
+import org.order.Order;
+import org.order.OrdersClient;
+import org.order.OrdersGenerator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

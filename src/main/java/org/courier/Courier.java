@@ -1,8 +1,6 @@
-package org.example;
+package org.courier;
 
-public class CourierCredentials {
-    private String login;
-
+public class Courier {
     public String getLogin() {
         return login;
     }
@@ -19,21 +17,27 @@ public class CourierCredentials {
         this.password = password;
     }
 
-    private String password;
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public CourierCredentials()
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    private String login;
+    private String password;
+    private String firstName;
+
+    public Courier()
     {
 
     }
 
-    public CourierCredentials(String login, String password)
+    public Courier(String login, String password, String firstName)
     {
         this.login = login;
         this.password = password;
-    }
-
-    public static CourierCredentials from(Courier courier)
-    {
-        return new CourierCredentials(courier.getLogin(), courier.getPassword());
+        this.firstName = firstName;
     }
 }

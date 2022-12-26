@@ -1,5 +1,5 @@
 import org.apache.commons.lang3.RandomStringUtils;
-import org.example.*;
+import org.courier.*;
 import org.junit.After;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.order;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;

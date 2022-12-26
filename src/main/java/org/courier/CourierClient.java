@@ -1,4 +1,4 @@
-package org.example;
+package org.courier;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;

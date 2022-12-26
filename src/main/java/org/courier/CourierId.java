@@ -1,4 +1,4 @@
-package org.example;
+package org.courier;
 
 public class CourierId {
     public int getId() {
